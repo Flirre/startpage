@@ -1,69 +1,122 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Landing</title>
- <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato|Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
     <style>
-     html, body {
-	 height: 100vh;
-	 margin: 0;
-     }
-     body {
-	 background-color: #343434;
-	 display: flex;
-	 flex-direction: column;
-	 justify-content: center;
-	 align-items: center;
-     }
-     body > div:first-child {
-	 background-color: #ababab;
-	 width: 25vw;
-     }
+      html,
+      body {
+        height: 100vh;
+        margin: 0;
+      }
 
-     body > div:nth-of-type(2) {
-	 background-color: #565656;
-	 width: 50vw;
-	 height: 15vh;
-	 display: flex;
-	 flex-direction: column;
-	 justify-content: space-around;
-	 align-items: center;
-     }
+      body {
+        background-color: #343434;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
 
-     a {
-	 text-decoration: none;
-	 color: white;
-     }
+      body > div:first-child {
+        background-color: #565656;
+        width: 960px;
+        min-height: 142px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 8px 8px;
+      }
 
-     body div div {
-	 height: 2.5em;
-	 font-size: 1.3em;
-	 width: inherit;
-	 float:left;
-	 font-family: 'Lato';
-	 line-height: 2.5em;
-     }
+      body > div:nth-of-type(2) {
+        background-color: #ababab;
+        width: 288px;
+        margin-top: 32px;
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+      }
+
+      body div div {
+        height: 2.5em;
+        font-size: 1.3em;
+        width: inherit;
+        float: left;
+        font-family: "Lato";
+        line-height: 2.5em;
+      }
+
+      .search input[type="text"] {
+        font-size: 1em;
+      }
+
+      .search button {
+        display: inline-flex;
+        vertical-align: middle;
+        border: 0;
+        background: #ababab;
+        box-shadow: none;
+        border-radius: 0px;
+      }
+
+      i {
+        width: 28px;
+      }
+
+      a {
+        display: inline-block;
+        width: 256px;
+      }
+
+      a:hover {
+        color: black;
+      }
+
+      i + a {
+        margin-left: 120px;
+      }
     </style>
-    <script>
-
-    </script>
+    <script></script>
   </head>
   <body>
-      <div>
-	  <p> search </p>
+    <div>
+      <div class="reddit">
+        <i class="fab fa-reddit"></i> |
+        <a href="https://reddit.com">/r/frontpage</a>
+        <a href="https://reddit.com/r/programming">/r/programming</a>
+        <a href="https://reddit.com/r/startpages">/r/startpages</a>
       </div>
-      <div>
-	  <div class="reddit">
-	      reddit | <a href="https://reddit.com/r/startpages">/r/startpages</a> <a href="https://reddit.com">/r/frontpage</a> <a href="https://reddit.com/r/programming">/r/programming</a>
-	  </div>
-	  <div class="news">
-news | <a href="https://news.ycombinator">hacker news</a> <a href="https://omni.se">omni</a> <a href="https://sweclockers.com">sweclockers</a>
-	  </div>
-	  <div class="code">
-	      code | <a href="https://github.com">github</a> <a href="https://stackoverflow.com">stack overflow</a> <a href="https://developer.mozilla.org">mdn</a>
-	  </div>
+      <div class="news">
+        <i class="fas fa-newspaper"></i> |
+        <a href="https://news.ycombinator">hacker news</a>
+        <a href="https://omni.se">omni</a>
+        <a href="https://sweclockers.com">sweclockers</a>
       </div>
-
+      <div class="code">
+        <i class="fas fa-code"></i> | <a href="https://github.com">github</a>
+        <a href="https://stackoverflow.com">stack overflow</a>
+        <a href="https://developer.mozilla.org">mdn</a>
+      </div>
+    </div>
+    <div class="search">
+      <form action="http://www.google.com/search" method="get">
+        <input type="text" name="q" placeholder="search" />
+        <button type="submit" name="submit">
+          <i class="material-icons">search</i>
+        </button>
+      </form>
+    </div>
   </body>
 </html>
