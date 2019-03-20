@@ -27,9 +27,32 @@
         align-items: center;
       }
 
+      @media (max-width: 991px) {
+        body > div:first-child {
+          width: 700px;
+        }
+        a {
+          width: 192px;
+        }
+        i + a {
+          margin-left: 73px;
+        }
+      }
+
+      @media (min-width: 992px) {
+        body > div:first-child {
+          width: 960px;
+        }
+        a {
+          width: 256px;
+        }
+        i + a {
+          margin-left: 120px;
+        }
+      }
+
       body > div:first-child {
         background-color: #565656;
-        width: 960px;
         min-height: 142px;
         display: flex;
         flex-direction: column;
@@ -45,6 +68,11 @@
       a {
         text-decoration: none;
         color: white;
+        display: inline-block;
+      }
+
+      a:hover {
+        color: black;
       }
 
       body div div {
@@ -85,19 +113,6 @@
 
       i {
         width: 28px;
-      }
-
-      a {
-        display: inline-block;
-        width: 256px;
-      }
-
-      a:hover {
-        color: black;
-      }
-
-      i + a {
-        margin-left: 120px;
       }
     </style>
   </head>
@@ -162,6 +177,7 @@
               search.placeholder = urls[engine].icon;
               form.action = urls[engine].url;
             }
+            console.log(window.innerWidth);
           };
           search.oninput = event => {
             if (event.target.value === '') {
