@@ -19,7 +19,6 @@
         height: 100vh;
         margin: 0;
       }
-
       body {
         background-color: #343434;
         display: flex;
@@ -43,7 +42,6 @@
         width: 288px;
         margin-top: 32px;
       }
-
       a {
         text-decoration: none;
         color: white;
@@ -54,12 +52,25 @@
         font-size: 1.3em;
         width: inherit;
         float: left;
-        font-family: "Lato";
+        font-family: 'Lato';
         line-height: 2.5em;
       }
 
-      .search input[type="text"] {
-        font-size: 1em;
+      .fa-placeholder {
+        font-family: FontAwesome, 'Open Sans', Verdana, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: inherit;
+        width: 200px !important;
+        height: 25px;
+      }
+
+      .search input[type='text'] {
+        font-size: 16px;
+        width: 242px !important;
+        height: 24px;
+        padding: 0 0 0 8px;
+        border: 0;
       }
 
       .search button {
@@ -69,6 +80,7 @@
         background: #ababab;
         box-shadow: none;
         border-radius: 0px;
+        padding: 0;
       }
 
       i {
@@ -88,7 +100,6 @@
         margin-left: 120px;
       }
     </style>
-    <script></script>
   </head>
   <body>
     <div>
@@ -111,12 +122,57 @@
       </div>
     </div>
     <div class="search">
-      <form action="http://www.google.com/search" method="get">
-        <input type="text" name="q" placeholder="search" />
+      <form
+        action="http://www.google.com/search"
+        method="get"
+        autocomplete="off"
+      >
+        <input
+          type="text"
+          class="fa-placeholder"
+          name="q"
+          placeholder="&#xF1A0;"
+        />
         <button type="submit" name="submit">
           <i class="material-icons">search</i>
         </button>
       </form>
     </div>
+    <script>
+      const urls = [
+        { name: 'google', url: 'http://www.google.com/search', icon: '\uF1A0' },
+        {
+          name: 'youtube',
+          url: 'https://www.youtube.com/results?search_query=',
+          icon: '\uF167'
+        }
+      ];
+      let engine = 0;
+    </script>
+    <script>
+      document.addEventListener(
+        'DOMContentLoaded',
+        function() {
+          let search = document.querySelector('input');
+          let form = document.querySelector('form');
+          search.onkeydown = event => {
+            if (event.key === 'Control') {
+              engine++;
+              engine = engine % 2;
+              search.placeholder = urls[engine].icon;
+              form.action = urls[engine].url;
+            }
+          };
+          search.oninput = event => {
+            if (event.target.value === '') {
+              event.target.classList.add('fa-placeholder');
+            } else {
+              event.target.classList.remove('fa-placeholder');
+            }
+          };
+        },
+        false
+      );
+    </script>
   </body>
 </html>
