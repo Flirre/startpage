@@ -27,18 +27,40 @@
         align-items: center;
       }
 
-      @media (max-width: 991px) {
+      @media (max-width: 767px) {
+        body > div:first-child {
+          width: 328px;
+          height: 588px;
+        }
+        a {
+          width: 100%;
+        }
+
+        body div div {
+          text-align: center;
+        }
+
+        body div div span {
+          display: none;
+        }
+      }
+
+      @media (min-width: 768px) {
         body > div:first-child {
           width: 700px;
         }
         a {
           width: 192px;
         }
-        i + a {
+        span + a {
           margin-left: 73px;
         }
-      }
 
+        body div div {
+          height: 2.5em;
+          font-size: 1.3em;
+        }
+      }
       @media (min-width: 992px) {
         body > div:first-child {
           width: 960px;
@@ -46,7 +68,7 @@
         a {
           width: 256px;
         }
-        i + a {
+        span + a {
           margin-left: 120px;
         }
       }
@@ -76,8 +98,6 @@
       }
 
       body div div {
-        height: 2.5em;
-        font-size: 1.3em;
         width: inherit;
         float: left;
         font-family: 'Lato';
@@ -119,19 +139,20 @@
   <body>
     <div>
       <div class="reddit">
-        <i class="fab fa-reddit"></i> |
+        <i class="fab fa-reddit"></i> <span>|</span>
         <a href="https://reddit.com">/r/frontpage</a>
         <a href="https://reddit.com/r/programming">/r/programming</a>
-        <a href="https://reddit.com/r/startpages">/r/startpages</a>
+        <a href="https://reddit.com/r/emacs">/r/emacs</a>
       </div>
       <div class="news">
-        <i class="fas fa-newspaper"></i> |
+        <i class="fas fa-newspaper"></i> <span>|</span>
         <a href="https://news.ycombinator">hacker news</a>
         <a href="https://omni.se">omni</a>
         <a href="https://sweclockers.com">sweclockers</a>
       </div>
       <div class="code">
-        <i class="fas fa-code"></i> | <a href="https://github.com">github</a>
+        <i class="fas fa-code"></i> <span>|</span>
+        <a href="https://github.com">github</a>
         <a href="https://stackoverflow.com">stack overflow</a>
         <a href="https://developer.mozilla.org">mdn</a>
       </div>
