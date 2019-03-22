@@ -192,13 +192,12 @@
           let search = document.querySelector('input');
           let form = document.querySelector('form');
           search.onkeydown = event => {
-            if (event.key === 'Control') {
+            if ((event.key === 'Control') || (event.key === 'CapsLock')) {
               engine++;
               engine = engine % 2;
               search.placeholder = urls[engine].icon;
               form.action = urls[engine].url;
             }
-            console.log(window.innerWidth);
           };
           search.oninput = event => {
             if (event.target.value === '') {
