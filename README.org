@@ -22,3 +22,4 @@ surge
 #+END_SRC
 ** Screenshot
 [[./screenshot.png]]
+[[./screenshot-mobile.png]]
