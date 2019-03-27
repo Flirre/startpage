@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Landing</title>
     <link
       href="https://fonts.googleapis.com/css?family=Lato|Material+Icons"
@@ -133,6 +134,32 @@
 
       i {
         width: 28px;
+      }
+
+      /* Portrait high-res-mobile */
+      @media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 4) and (orientation: portrait) {
+        body > div:first-child {
+          width: 280px;
+          height: 440px;
+          justify-content: space-evenly;
+        }
+        a {
+          width: 100%;
+          font-size: 16px;
+        }
+
+        i {
+          font-size: 20px;
+        }
+
+        body div div {
+          text-align: center;
+          line-height: 1.5em;
+        }
+
+        body div div span {
+          display: none;
+        }
       }
     </style>
   </head>
