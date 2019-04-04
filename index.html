@@ -218,29 +218,35 @@
       let engine = 0;
     </script>
     <script>
-      document.addEventListener(
-        'DOMContentLoaded',
-        function() {
-          let search = document.querySelector('input');
-          let form = document.querySelector('form');
-          search.onkeydown = event => {
-            if (event.key === 'Shift' && (event.key === 'Control' || event.key === 'CapsLock')) {
-              engine++;
-              engine = engine % 2;
-              search.placeholder = urls[engine].icon;
-              form.action = urls[engine].url;
-            }
-          };
-          search.oninput = event => {
-            if (event.target.value === '') {
-              event.target.classList.add('fa-placeholder');
-            } else {
-              event.target.classList.remove('fa-placeholder');
-            }
-          };
-        },
-        false
-      );
+      document.addEventListener('DOMContentLoaded', function() {
+        let search = document.querySelector('input');
+        let form = document.querySelector('form');
+        let pagediv = document.querySelector('body > div:first-child');
+        let keys = [];
+        search.onkeydown = event => {
+          keys.push(event.key);
+          if (
+            keys.includes('Shift') &&
+            (keys.includes('Control') || keys.includes('CapsLock'))
+          ) {
+            engine++;
+            engine = engine % 2;
+            search.placeholder = urls[engine].icon;
+            form.action = urls[engine].url;
+          }
+        };
+        search.onkeyup = event => {
+          keys = keys.filter(key => key !== event.key);
+        };
+        search.oninput = event => {
+          if (event.target.value === '') {
+            event.target.classList.add('fa-placeholder');
+          } else {
+            event.target.classList.remove('fa-placeholder');
+          }
+        };
+        false;
+      });
     </script>
   </body>
 </html>
