@@ -2,24 +2,14 @@
 ** Background
 Inspired by the different creations found at [[https://www.reddit.com/r/startpages][/r/startpages]] and having an interest in playing around with some basic HTML+CSS+Js, I started working on this page. This page is a chance for me to write Javascript without using a framework like React.js or Angular.
 ** Design & Implementation
-The webpage is being build in a way so that it is usable on both desktop and phones.
+The webpage is being build in a way so that it is usable on both desktop and phones. Everything is contained in a .html file since I want it to be portable. If it was split up into separate html/css/js files then that would require effort to copy to other places.
 ** Hosting
-Since it is just a .html file the page is hosted on [[https://www.static-startup.surge.sh][static-startup.surge.sh]].
+Since it is just a .html file the page is hosted on [[https://static-startpage.netlify.com/][static-startpage.netlify.com]].
 If you just want to inspect it locally you can just clone this repo by running:
 #+BEGIN_SRC sh
 git clone https://github.com/Flirre/startpage.git
 #+END_SRC
 Then you just open =index.html= in your preferred browser.
-
-To set up your own [[https://www.surge.sh][surge.sh]] hosting you can install surge via npm
-#+BEGIN_SRC sh
-npm install --global surge
-#+END_SRC
-
-After installing surge you run the command
-#+BEGIN_SRC sh
-surge
-#+END_SRC
 ** Screenshot
 [[./screenshot.png]]
 [[./screenshot-mobile.png]]
