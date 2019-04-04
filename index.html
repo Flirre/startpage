@@ -224,7 +224,7 @@
           let search = document.querySelector('input');
           let form = document.querySelector('form');
           search.onkeydown = event => {
-            if ((event.key === 'Control') || (event.key === 'CapsLock')) {
+            if (event.key === 'Shift' && (event.key === 'Control' || event.key === 'CapsLock')) {
               engine++;
               engine = engine % 2;
               search.placeholder = urls[engine].icon;
